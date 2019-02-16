@@ -46,7 +46,7 @@ type OverloadChecker interface {
 	Check(*gin.Context) code.Error
 }
 
-// NewDefaultSnowSlide 创建一个内置默认
+// NewDefaultOverloadChecker 创建一个内置默认
 func NewDefaultOverloadChecker(cnt int32, service string) OverloadChecker {
 	return &overloadChecker{
 		LimitCnt: cnt,

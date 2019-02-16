@@ -25,7 +25,7 @@ type Option struct {
 	Logger *logrus.Logger
 	// 自定义过载拦截器，如果不设置就会使用OverloadLimit创建一个默认的
 	OverloadChecker OverloadChecker
-	// 使用默认的SnowSlide，表示最大未返回的请求数，OverloadChecker未设置时有效
+	// 最大在处理的请求总数，OverloadChecker未设置时有效
 	OverloadLimit int32
 	// 自定义上报函数
 	Report ReportFunc
