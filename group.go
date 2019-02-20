@@ -21,7 +21,6 @@ type GroupWrapper interface {
 
 	HandlePprof()
 	HandleStat()
-
 	Group(path string) GroupWrapper
 }
 
@@ -87,5 +86,5 @@ func (gwrapper *groupWrapper) Delete(path string, f interface{}) {
 
 func (gwrapper *groupWrapper) Any(path string, f interface{}) {
 	debugPrintRoute(gwrapper.wrapper.logger, "ANY", path, f)
-	gwrapper.Any(path, gwrapper.wrapper.wrapFunc(f))
+	gwrapper.RouterGroup.Any(path, gwrapper.wrapper.wrapFunc(f))
 }
